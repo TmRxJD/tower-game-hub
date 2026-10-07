@@ -1,0 +1,45 @@
+{
+  "format": "GIF",
+  "durationSeconds": 8,
+  "width": 960,
+  "height": 540,
+  "framesPerSecond": 20,
+  "captures": [
+    {
+      "game": "altos-tower",
+      "source": "alto-gameplay.webm",
+      "startSeconds": 5,
+      "method": "Actual browser gameplay recorded with Playwright; built-in autoplay or normal keyboard controls."
+    },
+    {
+      "game": "towerium",
+      "source": "towerium-gameplay.webm",
+      "startSeconds": 7,
+      "method": "Actual browser gameplay recorded with Playwright; built-in autoplay or normal keyboard controls."
+    },
+    {
+      "game": "powerstone",
+      "source": "powerstone-gameplay.webm",
+      "startSeconds": 3,
+      "method": "Actual browser gameplay recorded with Playwright; built-in autoplay or normal keyboard controls."
+    },
+    {
+      "game": "bemerged",
+      "source": "bemerged/gameplay.webm",
+      "startSeconds": 10,
+      "method": "Actual browser gameplay recorded with Playwright; built-in autoplay or normal keyboard controls."
+    },
+    {
+      "game": "inner-land-minesweeper",
+      "source": "inner-land-minesweeper/boss-gameplay.webm",
+      "startSeconds": 79.8,
+      "method": "Actual browser gameplay recorded with Playwright; built-in autoplay or normal keyboard controls."
+    },
+    {
+      "game": "the-impossible-tower",
+      "source": "impossible-gameplay.webm",
+      "startSeconds": 42.08,
+      "method": "Actual browser gameplay recorded with Playwright; built-in autoplay or normal keyboard controls."
+    }
+  ]
+}

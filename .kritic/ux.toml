@@ -1,0 +1,20 @@
+[app]
+kind = "web"
+purpose = "A game hub: browse six game cards, read descriptions, watch or pause genuine gameplay GIFs, filter action or strategy games, and launch each game in a new browser tab. There are no embedded games or account requirements."
+url = "http://127.0.0.1:5198/tower-game-hub/"
+viewport = [1440, 1080]
+settle_ms = 600
+
+[[tasks]]
+name = "browse strategy games"
+goal = "Filter the collection to strategy games"
+done = { text = "Mines are your weapons" }
+budget = 1
+primary = true
+
+[[tasks]]
+name = "pause previews"
+goal = "Stop the animated previews"
+done = { control = "^Play previews" }
+budget = 1
+primary = true
