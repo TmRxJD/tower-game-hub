@@ -3,12 +3,14 @@
 ## Game and hub checks
 
 - Hub: catalogue test verifies all six destinations, complete GIF structure, 960 × 540 dimensions, 160 frames and exactly eight seconds. Svelte/TypeScript and production build are checked separately.
-- Hub browser: 320px and 1920px widths have no horizontal overflow. Desktop shows the requested six-game order in a 3-column, 2-row grid with no filters. All six animated GIF sources load even with OS reduced motion enabled; manual pause shows all six static posters and resume restores animation. Every game link opens a new tab with noopener noreferrer.
+- Hub browser: 320px and 1920px widths have no horizontal overflow. Desktop shows the requested six-game order in a 3-column, 2-row grid with no filters. All six animated preview sources load even with OS reduced motion enabled; manual pause shows all six static posters and resume restores animation. Every game link opens a new tab with noopener noreferrer.
 - Towerium: production build, 78 controller/playtest checks, fullscreen fallback/orientation browser check.
-- Alto's Tower: production build, fullscreen fallback/orientation browser check, actual 320px portrait/568px landscape play.
+- Alto's Tower: 118 local Rust tests passed; clean public GitHub Actions build and deployment passed after completing the coupled course-generation source changes. Production build, fullscreen fallback/orientation browser check, actual 320px portrait/568px landscape play.
 - Powerstone: 53 tests, typecheck and build. Public publishing worktree was tested independently. Actual play/layout checks at 320 × 568, 568 × 320, 390 × 844 and 1920 × 1080.
 - Inner Land Minesweeper: 35 current engine/planner tests; 24 complete seeded wins across three difficulties. Actual UI replay won in 117 moves, with Boss HP zero and no covered ground. Real phone taps were checked at every difficulty, including the dense Hard board.
-- Impossible Tower: public build has an original synthesized soundtrack, no commercial recordings, and sanitized course data. A conservation check compares every gameplay field against the original authored courses. Actual hold-to-hop, progress, fullscreen fallback and controls were checked at four phone/desktop sizes; zero recording requests and zero page errors.
+- Impossible Tower: 51 Rust tests passed in the isolated public export; public build has an original synthesized soundtrack, no commercial recordings, and sanitized course data. A conservation check compares every gameplay field against the original authored courses. Actual hold-to-hop, progress, fullscreen fallback and controls were checked at four phone/desktop sizes; zero recording requests and zero page errors.
+
+All seven sites (six games and the hub) have successful GitHub Pages deployments. Live HTML and matching JavaScript, CSS and WASM assets were checked. The hub catalogue links to each game.
 
 ## Remaining legacy checks and review limits
 
