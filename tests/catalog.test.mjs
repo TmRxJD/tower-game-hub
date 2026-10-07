@@ -43,3 +43,15 @@ test('every requested game has a unique HTTPS destination and real preview asset
     assert.ok(existsSync(new URL(`../public/previews/${game.id}.webp`, import.meta.url)));
   }
 });
+
+const backgrounds = JSON.parse(readFileSync(new URL('../src/backgrounds.json', import.meta.url)));
+test('every random background and creator icon is a complete shipped WebP', () => {
+  assert.equal(backgrounds.length, 9);
+  assert.equal(new Set(backgrounds).size, backgrounds.length);
+  for (const path of [...backgrounds.map(name => `backgrounds/${name}`), 'tower-logo.webp']) {
+    const bytes = readFileSync(new URL(`../public/${path}`, import.meta.url));
+    assert.equal(bytes.subarray(0, 4).toString(), 'RIFF');
+    assert.equal(bytes.subarray(8, 12).toString(), 'WEBP');
+    assert.equal(bytes.readUInt32LE(4) + 8, bytes.length);
+  }
+});

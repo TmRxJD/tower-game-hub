@@ -2,11 +2,11 @@
   {
     "id": "towerium",
     "name": "Towerium",
-    "genre": "Survival shooter",
+    "genre": "Manual-aim tower defense",
     "tag": "Hold the line",
     "color": "#b8f18b",
     "url": "https://tmrxjd.github.io/towerium/",
-    "description": "One tower. A screen full of enemies. Swap weapons, collect powers, and build your way through escalating waves of chaos.",
+    "description": "A manual-aim tower defense game: aim and fire your weapons, collect powers, and upgrade your tower as increasingly intense enemy waves close in.",
     "controls": "Aim + fire · mouse, keyboard or touch"
   },
   {

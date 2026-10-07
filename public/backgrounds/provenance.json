@@ -1,0 +1,15 @@
+{
+  "source": "https://github.com/TmRxJD/TheTowerSDK/tree/main/site/static",
+  "files": [
+    "hero-art.webp",
+    "feature-1.webp",
+    "feature-2.webp",
+    "feature-3.webp",
+    "feature-4.webp",
+    "feature-5.webp",
+    "feature-6.webp",
+    "feature-7.webp",
+    "feature-8.webp"
+  ],
+  "use": "TheTowerSDK live site hero and PageArt backgrounds reused for Tower Arcade."
+}

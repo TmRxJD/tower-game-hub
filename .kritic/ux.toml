@@ -1,16 +1,9 @@
 [app]
 kind = "web"
-purpose = "A game hub: browse six game cards, read descriptions, watch or pause genuine gameplay GIFs, and launch each game in a new browser tab. There are no embedded games or account requirements."
+purpose = "A game hub: browse six game cards, read descriptions, watch or pause genuine gameplay previews, use the JDEVO creator-code webstore link, and launch each game in a new browser tab. There are no embedded games or account requirements."
 url = "http://127.0.0.1:5198/tower-game-hub/"
 viewport = [1440, 1080]
 settle_ms = 600
-
-[[tasks]]
-name = "browse all six games"
-goal = "Find the six Tower-inspired mini games"
-done = { text = "Mines are your weapons" }
-budget = 1
-primary = true
 
 [[tasks]]
 name = "pause previews"
