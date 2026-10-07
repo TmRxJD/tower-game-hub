@@ -27,7 +27,7 @@ function gifTiming(bytes) {
   return { frames, seconds: hundredths / 100 };
 }
 test('every requested game has a unique HTTPS destination and real preview assets', () => {
-  assert.equal(games.length, 6);
+  assert.deepEqual(games.map(game => game.id), ['towerium', 'the-impossible-tower', 'altos-tower', 'bemerged', 'inner-land-minesweeper', 'powerstone']);
   assert.equal(new Set(games.map(g => g.id)).size, 6);
   assert.equal(new Set(games.map(g => g.url)).size, 6);
   for (const game of games) {
