@@ -1,6 +1,6 @@
 [app]
 kind = "web"
-purpose = "A game hub: browse six game cards, read descriptions, watch or pause genuine gameplay previews, use the JDEVO creator-code webstore link, and launch each game in a new browser tab. There are no embedded games or account requirements."
+purpose = "A game hub: browse nine game cards (six playable and three coming-soon templates), read descriptions, watch or pause genuine gameplay previews, use the JDEVO creator-code webstore link, and launch each game in a new browser tab. There are no embedded games or account requirements."
 url = "http://127.0.0.1:5198/tower-game-hub/"
 viewport = [1440, 1080]
 settle_ms = 600

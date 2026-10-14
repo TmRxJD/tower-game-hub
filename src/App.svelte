@@ -4,6 +4,7 @@
   import backgrounds from './backgrounds.json';
   let motion = $state(true);
   const base = import.meta.env.BASE_URL;
+  const playableCount = games.filter(game => game.url).length;
   function chooseBackground() {
     let choices = backgrounds;
     try {
@@ -16,7 +17,19 @@
   }
   const background = chooseBackground();
 </script>
-<svelte:head><meta property="og:title" content="Tower Arcade" /><meta property="og:description" content="Six mini games inspired by The Tower. Play on desktop or mobile." /></svelte:head>
+<svelte:head><meta property="og:title" content="Tower Arcade" /><meta property="og:description" content="Nine mini games inspired by The Tower. Six to play now, with three more on the way." /></svelte:head>
+{#snippet cardPreview(game: (typeof games)[number], index: number)}
+  {#if game.previewReady}
+    <picture>{#if game.id !== 'bemerged' && game.id !== 'inner-land-minesweeper'}<source type="image/webp" srcset={`${base}previews/${game.id}${motion ? '-animated' : ''}.webp`} />{/if}<img src={`${base}previews/${game.id}.${motion ? 'gif' : 'webp'}`} alt={`${game.name} gameplay preview`} width="960" height="540" loading={index < 3 ? 'eager' : 'lazy'} /></picture>
+  {:else}
+    <div class="placeholder-content">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="9" width="36" height="30" rx="4" /><path d="M6 17h36M6 31h36M15 9v8M24 9v8M33 9v8M15 31v8M24 31v8M33 31v8" /></svg>
+      <strong>Gameplay preview coming soon</strong>
+    </div>
+  {/if}
+  <span class="genre">{game.genre}</span>
+  {#if game.url}<span class="launch" aria-hidden="true">↗</span>{/if}
+{/snippet}
 <div class="backdrop" aria-hidden="true" style:background-image={`linear-gradient(180deg, rgba(5,10,18,.74), rgba(5,10,18,.86)), url('${base}backgrounds/${background}')`}></div>
 <div class="page">
   <header>
@@ -27,18 +40,23 @@
     <section class="intro" aria-labelledby="title">
       <div class="eyebrow"><span class="signal"></span> Independent fan games</div>
       <h1 id="title">Mini games inspired by<br /><span>The Tower.</span></h1>
-      <div class="intro-bottom"><p>Six ways to play with familiar Tower ideas.<br class="desktop-break" /> Pick a game and play full screen, on desktop or mobile.</p><div class="platforms"><span>Desktop + mobile</span><span>Play in your browser <b aria-hidden="true">↗</b></span></div></div>
+      <div class="intro-bottom"><p>Familiar Tower ideas, made into mini games.<br class="desktop-break" /> Play {playableCount} games now, with {games.length - playableCount} more on the way.</p><div class="platforms"><span>Desktop + mobile</span><span>Play in your browser <b aria-hidden="true">↗</b></span></div></div>
     </section>
     <section id="games" aria-label="Game collection">
-      <div class="collection-bar"><span class="collection-label">The collection / 6 games</span><button class="motion" aria-pressed={!motion} onclick={() => motion = !motion}>{motion ? 'Pause previews' : 'Play previews'} <span aria-hidden="true">{motion ? 'Ⅱ' : '▷'}</span></button></div>
+      <div class="collection-bar"><span class="collection-label">The collection / {games.length} games</span><button class="motion" aria-pressed={!motion} onclick={() => motion = !motion}>{motion ? 'Pause previews' : 'Play previews'} <span aria-hidden="true">{motion ? 'Ⅱ' : '▷'}</span></button></div>
       <div class="grid">
         {#each games as game, index (game.id)}
-          <article style={`--accent:${game.color}`}>
-            <a class="preview" href={game.url} target="_blank" rel="noopener noreferrer" aria-label={`Play ${game.name} (opens in a new tab)`}>
-              <picture>{#if game.id !== 'bemerged' && game.id !== 'inner-land-minesweeper'}<source type="image/webp" srcset={`${base}previews/${game.id}${motion ? '-animated' : ''}.webp`} />{/if}<img src={`${base}previews/${game.id}.${motion ? 'gif' : 'webp'}`} alt={`${game.name} gameplay preview`} width="960" height="540" loading={index < 3 ? 'eager' : 'lazy'} /></picture>
-              <span class="genre">{game.genre}</span><span class="launch" aria-hidden="true">↗</span>
-            </a>
-            <div class="card-body"><p class="tag">{game.tag}</p><div class="card-title"><h2>{game.name}</h2></div><p class="description">{game.description}</p><div class="card-footer"><span>{game.controls}</span><a href={game.url} target="_blank" rel="noopener noreferrer">Play now <span aria-hidden="true">↗</span><span class="sr-only"> — {game.name}, opens in a new tab</span></a></div></div>
+          <article class:pending={!game.url} style={`--accent:${game.color}`}>
+            {#if game.url}
+              <a class="preview" href={game.url} target="_blank" rel="noopener noreferrer" aria-label={`Play ${game.name} (opens in a new tab)`}>
+                {@render cardPreview(game, index)}
+              </a>
+            {:else}
+              <div class="preview pending-preview" aria-label={`${game.name} gameplay preview coming soon`}>
+                {@render cardPreview(game, index)}
+              </div>
+            {/if}
+            <div class="card-body"><p class="tag">{game.tag}</p><div class="card-title"><h2>{game.name}</h2></div><p class="description">{game.description}</p><div class="card-footer"><span>{game.controls}</span>{#if game.url}<a href={game.url} target="_blank" rel="noopener noreferrer">Play now <span aria-hidden="true">↗</span><span class="sr-only"> — {game.name}, opens in a new tab</span></a>{:else}<button class="coming-soon" disabled aria-label={`${game.name} coming soon`}>Coming soon</button>{/if}</div></div>
           </article>
         {/each}
       </div>
@@ -55,4 +73,10 @@
 .collection-label{font-size:13px;font-family:inherit;letter-spacing:.3px;color:#a5b5ab}
 .header-actions{display:flex;align-items:center;gap:24px}
 @media(max-width:650px){.header-actions{gap:0}.header-link{display:none}.wordmark{font-size:12px;letter-spacing:.8px;gap:5px}.wordmark svg{width:26px;height:26px}}
+article.pending:hover{border-color:#ffffff16;transform:none}
+.pending-preview{background:radial-gradient(ellipse at 50% 40%,color-mix(in srgb,var(--accent) 12%,#080d12),#080d12 75%)}
+.placeholder-content{display:grid;place-content:center;justify-items:center;gap:10px;height:100%;padding:16px 20px 54px;color:#d5e1db;text-align:center}
+.placeholder-content svg{width:32px;height:32px;fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.placeholder-content strong{font-size:14px;line-height:1.35;max-width:22ch;font-weight:500}
+.coming-soon{border:0;background:transparent;color:#a5b5ab;font-size:13px;font-weight:600;min-height:44px;padding:0;white-space:nowrap;cursor:default}
 </style>

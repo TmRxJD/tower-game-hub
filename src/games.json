@@ -7,7 +7,8 @@
     "color": "#b8f18b",
     "url": "https://tmrxjd.github.io/towerium/",
     "description": "A manual-aim tower defense game: aim and fire your weapons, collect powers, and upgrade your tower as increasingly intense enemy waves close in.",
-    "controls": "Aim + fire · mouse, keyboard or touch"
+    "controls": "Aim + fire · mouse, keyboard or touch",
+    "previewReady": true
   },
   {
     "id": "the-impossible-tower",
@@ -17,7 +18,8 @@
     "color": "#fa999c",
     "url": "https://tmrxjd.github.io/theimpossibletower/",
     "description": "Hop across enemy platforms in time with the beat. Release and tap again at the peak to dash through gaps, gravity wells, and lightning-filled routes.",
-    "controls": "Hold to hop · Space or touch"
+    "controls": "Hold to hop · Space or touch",
+    "previewReady": true
   },
   {
     "id": "altos-tower",
@@ -27,7 +29,41 @@
     "color": "#f3d4a1",
     "url": "https://tmrxjd.github.io/altos-tower/",
     "description": "Race across a sweeping landscape, time your jumps, and keep your momentum. A flowing Tower-inspired adventure where one more run is always tempting.",
-    "controls": "Jump · keyboard, mouse or touch"
+    "controls": "Jump · keyboard, mouse or touch",
+    "previewReady": true
+  },
+  {
+    "id": "boom-boom-tower",
+    "name": "Boom Boom Tower",
+    "genre": "Rocket rhythm game",
+    "tag": "Play the beat",
+    "color": "#ffac88",
+    "url": null,
+    "description": "Hit color-coded rocket notes in time with the music. Choose a song and difficulty, find your rhythm, and keep your timing sharp as the chart intensifies.",
+    "controls": "Four rocket inputs · keyboard, gamepad or touch",
+    "previewReady": false
+  },
+  {
+    "id": "cointraptions",
+    "name": "Cointraptions",
+    "genre": "Contraption puzzle",
+    "tag": "The Incredible Tower",
+    "color": "#f3d575",
+    "url": null,
+    "description": "Build a contraption that routes enemies through your apparatus to dismantle the tower. Solve campaign puzzles, earn coins, and unlock new parts for your next invention.",
+    "controls": "Place + drag parts · Space runs, R rotates",
+    "previewReady": false
+  },
+  {
+    "id": "orble",
+    "name": "Orble",
+    "genre": "Ricochet arcade",
+    "tag": "Towergle",
+    "color": "#92caff",
+    "url": null,
+    "description": "Aim a limited supply of balls through Tower-inspired courses. Ricochet into orange targets, collect bonuses, and use your core ability to make every shot count.",
+    "controls": "Aim + launch · mouse, touch or keyboard",
+    "previewReady": false
   },
   {
     "id": "bemerged",
@@ -37,7 +73,8 @@
     "color": "#c5abff",
     "url": "https://tmrxjd.github.io/Bemerged/",
     "description": "Combine your pieces, plan your board, and turn small upgrades into powerful combinations. A Tower-inspired puzzle built around the next clever merge.",
-    "controls": "Drag to merge · mouse or touch"
+    "controls": "Drag to merge · mouse or touch",
+    "previewReady": true
   },
   {
     "id": "inner-land-minesweeper",
@@ -47,7 +84,8 @@
     "color": "#ffbf75",
     "url": "https://tmrxjd.github.io/InnerLandMinesweeper/",
     "description": "Arm mines, chain their blasts, and hook a charged cluster into the shielded boss. Clear the field, then beat your own time.",
-    "controls": "Tap to arm and detonate · mouse or touch"
+    "controls": "Tap to arm and detonate · mouse or touch",
+    "previewReady": true
   },
   {
     "id": "powerstone",
@@ -57,6 +95,7 @@
     "color": "#87dce8",
     "url": "https://tmrxjd.github.io/TowerTheGathering/",
     "description": "Command three lanes in a turn-based duel. Spend mana, combine Tower-inspired cards, and break the enemy Nexus before your own tower falls.",
-    "controls": "Play cards + end turn · mouse or touch"
+    "controls": "Play cards + end turn · mouse or touch",
+    "previewReady": true
   }
 ]
