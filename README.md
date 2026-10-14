@@ -1,6 +1,6 @@
 # Tower Arcade
 
-A Svelte 5 / Vite hub for nine independent Tower-inspired mini games (six playable, three coming-soon card templates). This repository only presents the collection and opens the games in new tabs; each game lives and deploys in its own repository.
+A Svelte 5 / Vite hub for nine independent Tower-inspired mini games (six playable, three coming-soon card templates). This repository only presents the collection and opens the games in new tabs; released games live and deploy in their own repositories.
 
 ## Develop
 
