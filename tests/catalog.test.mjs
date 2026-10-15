@@ -29,13 +29,17 @@ function gifTiming(bytes) {
 test('catalogue preserves the requested three rows and honest preview readiness', () => {
   assert.deepEqual(games.map(game => game.id), ['towerium', 'the-impossible-tower', 'altos-tower', 'boom-boom-tower', 'cointraptions', 'orble', 'bemerged', 'inner-land-minesweeper', 'powerstone']);
   assert.equal(new Set(games.map(g => g.id)).size, 9);
-  assert.equal(new Set(games.filter(g => g.url).map(g => g.url)).size, 6);
+  assert.equal(new Set(games.filter(g => g.url).map(g => g.url)).size, 9);
+  assert.equal(games.filter(g => g.playable).length, 6);
   assert.deepEqual(games.filter(g => !g.previewReady).map(g => g.id), ['boom-boom-tower', 'cointraptions', 'orble']);
   for (const game of games) {
     assert.ok(game.description.length > 50);
     assert.equal(typeof game.previewReady, 'boolean');
+    assert.equal(typeof game.playable, 'boolean');
+    assert.equal(new URL(game.url).protocol, 'https:');
+    assert.equal(new URL(game.url).pathname.endsWith('/about/'), game.playable, 'Released games open their matching information pages; development sites stay at their own roots');
     if (!game.previewReady) {
-      assert.equal(game.url, null, 'Unreleased games must not advertise an unverified launch URL');
+      assert.equal(game.playable, false, 'A development information site is not a playable game');
       continue;
     }
     assert.equal(new URL(game.url).protocol, 'https:');

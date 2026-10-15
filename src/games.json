@@ -5,10 +5,11 @@
     "genre": "Manual-aim tower defense",
     "tag": "Hold the line",
     "color": "#b8f18b",
-    "url": "https://tmrxjd.github.io/towerium/",
+    "url": "https://tmrxjd.github.io/towerium/about/",
     "description": "A manual-aim tower defense game: aim and fire your weapons, collect powers, and upgrade your tower as increasingly intense enemy waves close in.",
     "controls": "Aim + fire · mouse, keyboard or touch",
-    "previewReady": true
+    "previewReady": true,
+    "playable": true
   },
   {
     "id": "the-impossible-tower",
@@ -16,10 +17,11 @@
     "genre": "Rhythm platformer",
     "tag": "One more attempt",
     "color": "#fa999c",
-    "url": "https://tmrxjd.github.io/theimpossibletower/",
+    "url": "https://tmrxjd.github.io/theimpossibletower/about/",
     "description": "Hop across enemy platforms in time with the beat. Release and tap again at the peak to dash through gaps, gravity wells, and lightning-filled routes.",
     "controls": "Hold to hop · Space or touch",
-    "previewReady": true
+    "previewReady": true,
+    "playable": true
   },
   {
     "id": "altos-tower",
@@ -27,10 +29,11 @@
     "genre": "Endless runner",
     "tag": "Find your flow",
     "color": "#f3d4a1",
-    "url": "https://tmrxjd.github.io/altos-tower/",
+    "url": "https://tmrxjd.github.io/altos-tower/about/",
     "description": "Race across a sweeping landscape, time your jumps, and keep your momentum. A flowing Tower-inspired adventure where one more run is always tempting.",
     "controls": "Jump · keyboard, mouse or touch",
-    "previewReady": true
+    "previewReady": true,
+    "playable": true
   },
   {
     "id": "boom-boom-tower",
@@ -38,10 +41,11 @@
     "genre": "Rocket rhythm game",
     "tag": "Play the beat",
     "color": "#ffac88",
-    "url": null,
+    "url": "https://tmrxjd.github.io/boom-boom-tower/",
     "description": "Hit color-coded rocket notes in time with the music. Choose a song and difficulty, find your rhythm, and keep your timing sharp as the chart intensifies.",
     "controls": "Four rocket inputs · keyboard, gamepad or touch",
-    "previewReady": false
+    "previewReady": false,
+    "playable": false
   },
   {
     "id": "cointraptions",
@@ -49,10 +53,11 @@
     "genre": "Contraption puzzle",
     "tag": "The Incredible Tower",
     "color": "#f3d575",
-    "url": null,
+    "url": "https://tmrxjd.github.io/cointraptions/",
     "description": "Build a contraption that routes enemies through your apparatus to dismantle the tower. Solve campaign puzzles, earn coins, and unlock new parts for your next invention.",
     "controls": "Place + drag parts · Space runs, R rotates",
-    "previewReady": false
+    "previewReady": false,
+    "playable": false
   },
   {
     "id": "orble",
@@ -60,10 +65,11 @@
     "genre": "Ricochet arcade",
     "tag": "Towergle",
     "color": "#92caff",
-    "url": null,
+    "url": "https://tmrxjd.github.io/orble/",
     "description": "Aim a limited supply of balls through Tower-inspired courses. Ricochet into orange targets, collect bonuses, and use your core ability to make every shot count.",
     "controls": "Aim + launch · mouse, touch or keyboard",
-    "previewReady": false
+    "previewReady": false,
+    "playable": false
   },
   {
     "id": "bemerged",
@@ -71,10 +77,11 @@
     "genre": "Merge strategy",
     "tag": "Make your next move count",
     "color": "#c5abff",
-    "url": "https://tmrxjd.github.io/Bemerged/",
+    "url": "https://tmrxjd.github.io/Bemerged/about/",
     "description": "Combine your pieces, plan your board, and turn small upgrades into powerful combinations. A Tower-inspired puzzle built around the next clever merge.",
     "controls": "Drag to merge · mouse or touch",
-    "previewReady": true
+    "previewReady": true,
+    "playable": true
   },
   {
     "id": "inner-land-minesweeper",
@@ -82,10 +89,11 @@
     "genre": "Chain-reaction puzzle",
     "tag": "Mines are your weapons",
     "color": "#ffbf75",
-    "url": "https://tmrxjd.github.io/InnerLandMinesweeper/",
+    "url": "https://tmrxjd.github.io/InnerLandMinesweeper/about/",
     "description": "Arm mines, chain their blasts, and hook a charged cluster into the shielded boss. Clear the field, then beat your own time.",
     "controls": "Tap to arm and detonate · mouse or touch",
-    "previewReady": true
+    "previewReady": true,
+    "playable": true
   },
   {
     "id": "powerstone",
@@ -93,9 +101,10 @@
     "genre": "Card battler",
     "tag": "Tower: The Gathering",
     "color": "#87dce8",
-    "url": "https://tmrxjd.github.io/TowerTheGathering/",
+    "url": "https://tmrxjd.github.io/TowerTheGathering/about/",
     "description": "Command three lanes in a turn-based duel. Spend mana, combine Tower-inspired cards, and break the enemy Nexus before your own tower falls.",
     "controls": "Play cards + end turn · mouse or touch",
-    "previewReady": true
+    "previewReady": true,
+    "playable": true
   }
 ]

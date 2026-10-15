@@ -4,7 +4,7 @@
   import backgrounds from './backgrounds.json';
   let motion = $state(true);
   const base = import.meta.env.BASE_URL;
-  const playableCount = games.filter(game => game.url).length;
+  const playableCount = games.filter(game => game.playable).length;
   function chooseBackground() {
     let choices = backgrounds;
     try {
@@ -48,7 +48,7 @@
         {#each games as game, index (game.id)}
           <article class:pending={!game.url} style={`--accent:${game.color}`}>
             {#if game.url}
-              <a class="preview" href={game.url} target="_blank" rel="noopener noreferrer" aria-label={`Play ${game.name} (opens in a new tab)`}>
+              <a class="preview" class:pending-preview={!game.previewReady} href={game.url} target="_blank" rel="noopener noreferrer" aria-label={`Visit the site for ${game.name} (opens in a new tab)`}>
                 {@render cardPreview(game, index)}
               </a>
             {:else}
@@ -56,7 +56,7 @@
                 {@render cardPreview(game, index)}
               </div>
             {/if}
-            <div class="card-body"><p class="tag">{game.tag}</p><div class="card-title"><h2>{game.name}</h2></div><p class="description">{game.description}</p><div class="card-footer"><span>{game.controls}</span>{#if game.url}<a href={game.url} target="_blank" rel="noopener noreferrer">Play now <span aria-hidden="true">↗</span><span class="sr-only"> — {game.name}, opens in a new tab</span></a>{:else}<button class="coming-soon" disabled aria-label={`${game.name} coming soon`}>Coming soon</button>{/if}</div></div>
+            <div class="card-body"><p class="tag">{game.tag}</p><div class="card-title"><h2>{game.name}</h2></div><p class="description">{game.description}</p><div class="card-footer"><span>{game.controls}</span>{#if game.url}<a href={game.url} target="_blank" rel="noopener noreferrer">Visit site <span aria-hidden="true">↗</span><span class="sr-only"> — {game.name}, opens in a new tab</span></a>{:else}<button class="coming-soon" disabled aria-label={`${game.name} coming soon`}>Coming soon</button>{/if}</div></div>
           </article>
         {/each}
       </div>
